@@ -1,0 +1,277 @@
+
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Herr+Von+Muellerhoff&display=swap');
+
+
+
+:root {
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*Global Styles*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: hsl(210, 36%, 96%);
+  color: #222;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: 'Dancing Script', cursive;
+  color: #222;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+.drink-name{
+  color:hsl(26, 93%, 52%);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+.btn {
+  text-transform: uppercase;
+  background:  hsl(26, 87%, 63%);
+  color:#222;
+  padding: 0.375rem 0.375rem;
+  letter-spacing: 2px;
+  display: block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid hsl(26, 87%, 63%);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+  color: vhsl(210, 22%, 49%);
+  background:hsl(21, 88%, 46%);
+  border-color: hsl(21, 88%, 46%);
+}
+/* section */
+.section {
+  padding: 1rem 0;
+}
+
+.section-center {
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 576px) {
+  .section-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+.underline {
+  width: 8rem;
+  height: 0.25rem;
+  background: hsl(26, 97%, 45%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/* loading */
+.loading {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  z-index: 999;
+  background: hsl(210, 36%, 96%);
+}
+
+.hide-loading {
+  display: none;
+}
+
+/* search form */
+.search-form {
+  text-align: center;
+  padding-top: 5rem;
+  width: 85vw;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  font-size: 1rem;
+  border-color: transparent;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+input {
+  border-radius: var(--radius);
+}
+
+input::placeholder {
+  text-transform: capitalize;
+  color: hsl(0, 0%, 44%);
+}
+
+/* cocktails */
+.cocktails {
+  position: relative;
+}
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.cocktail h3 {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: rgb(246, 114, 32);
+  color: #222;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
+  font-family:'Dancing Script', cursive; ;
+  font-size: 2rem;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+.cocktail h3:hover {
+  background: rgb(197, 77, 2);
+}
+
+.cocktail
+{
+  margin: 50px auto 0px;
+  max-width: 1170px;
+  display: grid;
+  gap: 1rem 2rem 1rem;
+  justify-items: center;
+  position: relative;
+}
+.cocktail img
+{
+  position: absolute;
+  margin:28px;
+  width:300px;
+  height:300px;
+  background-color:#ffac99;
+  display:inline-block;
+  background-size:cover;
+  position:relative;
+  cursor:pointer;
+  transition: all 0.4s ease-out;
+  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+  overflow: hidden;
+  color:#fff;
+  font-family:'Roboto';
+  left: 1.5rem;
+  right: 1.5rem; 
+}
+.cocktail:hover img {
+  filter: brightness(140%);
+}
+
+/* single cocktail */
+.single-drink {
+  width: 85vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+.drink-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+@media screen and (min-width: 992px) {
+  .single-drink {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+.drink-info {
+  padding-top: 2rem;
+}
+
+.drink-ingredients .far {
+  margin-right: 1rem;
+}
+
+.single-drink .btn {
+  display: inline-block;
+  margin-top: 2rem;
+}
